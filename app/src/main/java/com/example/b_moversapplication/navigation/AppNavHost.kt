@@ -6,7 +6,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.b_moversapplication.ui.theme.pages.home.homescreen
+import com.example.b_moversapplication.ui.theme.pages.bookings.bookingspage
+
+import com.example.b_moversapplication.ui.theme.pages.home.homescreenpage
+import com.example.b_moversapplication.ui.theme.pages.registration.Registrationpage
 
 
 @Composable
@@ -19,7 +22,15 @@ fun AppNavHost (
         modifier = modifier, startDestination = startDestination
     ) {
         composable(ROUTE_HOME) {
-            homescreen(navController)
+       homescreenpage(navController)
         }
+        composable(ROUTE_BOOK) {
+            bookingspage(navController)
+        }
+        composable(ROUTE_REGISTER) {
+            Registrationpage(navController)
+        }
+
+
     }
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "970558346207",
+    "project_id": "b-movers",
+    "storage_bucket": "b-movers.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970558346207:android:7ea8891a016c182572ea6a",
+        "android_client_info": {
+          "package_name": "com.example.b_moversapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970558346207-a6f74v3cdgce7qub0c8kkdcl1720gaoi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAagxGwqO-18vWiW-LhpHeC_Cv4bbHM2PY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "970558346207-a6f74v3cdgce7qub0c8kkdcl1720gaoi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

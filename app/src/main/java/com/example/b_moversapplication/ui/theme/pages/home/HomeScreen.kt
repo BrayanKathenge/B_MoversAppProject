@@ -11,11 +11,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.b_moversapplication.navigation.ROUTE_BOOK
+import com.example.b_moversapplication.navigation.ROUTE_REGISTER
+
 import com.example.b_moversapplication.ui.theme.B_MoversApplicationTheme
 
 
 @Composable
-fun homescreen(naController: NavHostController) {
+fun homescreenpage(naController: NavHostController) {
     Column(modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
@@ -26,8 +29,11 @@ fun homescreen(naController: NavHostController) {
             Text(text = "about")
         }
 
-        Button(onClick = {/*TODO*/}) {
-            Text(text = "Registration")
+        Button(onClick = {naController.navigate(ROUTE_REGISTER)}) {
+            Text(text = "Register")
+        }
+        Button(onClick = {naController.navigate(ROUTE_BOOK)}) {
+            Text(text = "Book Truck")
         }
     }
 
@@ -37,6 +43,6 @@ fun homescreen(naController: NavHostController) {
 @Composable
 fun homescreenpreview() {
     B_MoversApplicationTheme {
-        homescreen(rememberNavController())
+        homescreenpage(rememberNavController())
     }
 }

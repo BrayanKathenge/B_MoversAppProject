@@ -20,11 +20,13 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.b_moversapplication.ui.theme.B_MoversApplicationTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RegisterDriver() {
+fun Registrationpage (navHostController: NavHostController) {
     Column(modifier= Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally) {
         Text(text = "Driver Registration")
@@ -77,6 +79,6 @@ fun RegisterDriver() {
 @Composable
 fun RegistrationScreenpreview() {
     B_MoversApplicationTheme {
-        RegisterDriver()
+        Registrationpage(rememberNavController())
     }
 }
