@@ -21,7 +21,7 @@ fun bookingspage(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Book Now",
+            text = "Book Nownm",
             color = Color.Yellow,
             fontFamily = FontFamily.Cursive,
             fontSize = 30.sp
