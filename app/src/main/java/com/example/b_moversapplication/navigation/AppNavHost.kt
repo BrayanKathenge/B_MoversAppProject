@@ -10,6 +10,7 @@ import com.example.b_moversapplication.ui.theme.pages.bookings.bookingspage
 
 import com.example.b_moversapplication.ui.theme.pages.home.homescreenpage
 import com.example.b_moversapplication.ui.theme.pages.registration.Registrationpage
+import com.example.b_moversapplication.ui.theme.pages.registration.ViewdriversScreen
 
 
 @Composable
@@ -24,10 +25,10 @@ fun AppNavHost (
         composable(ROUTE_HOME) {
        homescreenpage(navController)
         }
-        composable(ROUTE_BOOK) {
-            bookingspage(navController)
+        composable(ROUTE_VIEW_DRIVER) {
+            ViewdriversScreen(navController)
         }
-        composable(ROUTE_REGISTER) {
+        composable(ROUTE_ADD_DRIVER) {
             Registrationpage(navController)
         }
 

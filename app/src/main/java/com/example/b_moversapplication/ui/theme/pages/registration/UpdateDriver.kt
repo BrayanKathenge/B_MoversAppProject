@@ -16,21 +16,26 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.b_moversapplication.data.ProductRepository
 import com.example.b_moversapplication.ui.theme.B_MoversApplicationTheme
+
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Updatedetailspage(navHostController: NavHostController) {
+fun Updatedetailspage(navController: NavHostController,id:String) {
+
     Column(modifier= Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally) {
         Text(text = "Driver Registration")
+        var context= LocalContext.current
 
         var drivername by remember { mutableStateOf(TextFieldValue("")) }
         var trucknumber by remember { mutableStateOf(TextFieldValue("")) }
@@ -62,11 +67,10 @@ fun Updatedetailspage(navHostController: NavHostController) {
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(onClick = { /*TODO*/ }) {
-            Text(text = "Submit Registration")
 
-        }
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = { //--update logic--//
+            var productRepository = ProductRepository(navController, context)
+            productRepository.Uproduct(drivername.text.trim(),truckcategory.text.trim(),trucknumber.text.trim(),make.text.trim(),loaders.text.trim(),id) }) {
             Text(text = "Update Details")
 
         }
@@ -80,6 +84,6 @@ fun Updatedetailspage(navHostController: NavHostController) {
 @Composable
 fun UpdatedetailsPagepreview() {
     B_MoversApplicationTheme {
-        Updatedetailspage(rememberNavController())
+        Updatedetailspage(rememberNavController(),id="")
     }
 }

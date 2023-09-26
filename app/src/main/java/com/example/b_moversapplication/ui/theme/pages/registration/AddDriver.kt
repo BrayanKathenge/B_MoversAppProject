@@ -16,20 +16,24 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.b_moversapplication.data.ProductRepository
+import com.example.b_moversapplication.navigation.ROUTE_UPDATE_DRIVER
 import com.example.b_moversapplication.ui.theme.B_MoversApplicationTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Registrationpage (navHostController: NavHostController) {
+fun Registrationpage (navController: NavHostController) {
     Column(modifier= Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally) {
         Text(text = "Driver Registration")
+        var context= LocalContext.current
 
         var drivername by remember { mutableStateOf(TextFieldValue("")) }
         var trucknumber by remember { mutableStateOf(TextFieldValue("")) }
@@ -61,11 +65,14 @@ fun Registrationpage (navHostController: NavHostController) {
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = { //--Save logic here--//
+            var productRepository = ProductRepository(navController, context)
+            productRepository.SaveProduct(drivername.text.trim(),trucknumber.text.trim(),truckcategory.text.trim(),make.text.trim(),loaders.text.trim())
+        }) {
             Text(text = "Submit Registration")
 
         }
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = {  navController.navigate(ROUTE_UPDATE_DRIVER) }) {
             Text(text = "Update Details")
 
         }

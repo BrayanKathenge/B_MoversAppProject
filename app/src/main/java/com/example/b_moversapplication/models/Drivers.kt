@@ -6,6 +6,7 @@ class Drivers {
     var truckcategory:String=""
     var make:String=""
     var loaders:String=""
+    var id:String=""
 
     constructor(
         drivername: String,
@@ -20,5 +21,7 @@ class Drivers {
         this.truckcategory = truckcategory
         this.make = make
         this.loaders = loaders
+        this.id = id
     }
+    constructor()
 }
